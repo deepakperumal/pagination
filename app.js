@@ -12,9 +12,17 @@ app.directive('directive1', function() {
         let page = 0;
         $scope.loadMore = function() {
           page++;
-          $scope.logEvents.push({
-            name: page
-          });
+
+
+for(let i=0;i<10;i++)
+
+$scope.logEvents.push({
+  name: page
+});
+
+
+          console.log(page);
+        
         };
       }
     ],
@@ -33,32 +41,9 @@ app.directive('directive2', function() {
         let page = 0;
         $scope.loadMore = function() {
           page++;
-          $scope.logEvents.push(
-            {
-              name: page
-            },
-            {
-              name: page
-            },
-            {
-              name: page
-            },
-            {
-              name: page
-            },
-            {
-              name: page
-            },
-            {
-              name: page
-            },
-            {
-              name: page
-            },
-            {
-              name: page
-            }
-          );
+          $scope.logEvents.push({
+            name: page
+          });
         };
       }
     ],
