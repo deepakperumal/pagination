@@ -6,8 +6,8 @@ app.directive('directive1', function() {
     scope: {},
     controller: [
       '$scope',
-      'scrollFactory',
-      function scope1Controller1($scope, scrollFactory) {
+
+      function scope1Controller1($scope) {
         $scope.logEvents = [];
         let page = 0;
         $scope.loadMore = function() {
@@ -27,36 +27,41 @@ app.directive('directive2', function() {
     scope: {},
     controller: [
       '$scope',
-      'scrollFactory',
-      function scope1Controller1($scope, scrollFactory) {
+
+      function scope1Controller1($scope) {
         $scope.logEvents = [];
         let page = 0;
         $scope.loadMore = function() {
           page++;
-          $scope.logEvents.push({
-            name: page
-          });
+          $scope.logEvents.push(
+            {
+              name: page
+            },
+            {
+              name: page
+            },
+            {
+              name: page
+            },
+            {
+              name: page
+            },
+            {
+              name: page
+            },
+            {
+              name: page
+            },
+            {
+              name: page
+            },
+            {
+              name: page
+            }
+          );
         };
       }
     ],
     templateUrl: './scroll2.html'
-  };
-});
-
-app.factory('scrollFactory', function($http, $q) {
-  return {
-    resultData: function(url) {
-      var def = $q.defer();
-
-      $http
-        .get(url)
-        .success(function(data) {
-          def.resolve(data);
-        })
-        .error(function() {
-          def.reject({ err: 'Failed to get albums' });
-        });
-      return def.promise;
-    }
   };
 });
