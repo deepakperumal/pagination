@@ -1,0 +1,11 @@
+<div class="constrained1">
+  <table class="table table-striped" id="loggingTable" infinite-scroll="loadMore()" infinite-scroll-container='".constrained1"' infinite-scroll-distance="0" infinite-scroll-parent="true">
+      <tr data-ng-show="logEventFilter.length === 0">
+          <td class="center" colspan="3">Nobody is here</td>
+      </tr>
+      <tr data-ng-repeat="data in logEvents">
+        <td> {{data.name}} </td>
+       
+    </tr>
+  </table>
+</div>

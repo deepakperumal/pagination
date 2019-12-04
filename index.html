@@ -1,70 +1,48 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      data-require="bootstrap-css@3.0.0-rc2"
-      data-semver="3.0.0-rc2"
-      rel="stylesheet"
-      href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css"
-    />
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>AngularJS Infinite Scroll in scrolling div</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-      body {
-        background: #000000 !important;
-      }
-      .cont-wrap {
-        width: 63%;
-        padding: 40px;
-        margin: 20px auto;
-        background: #ffffff;
-      }
+ 
+ 
 
-      .list-id {
-        margin-right: 20px;
-      }
+      <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+      <script type="text/javascript" src="https://code.angularjs.org/1.4.8/angular.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.js"></script>
+      <script type="text/javascript" src="./app.js"></script>
 
-      .ng-scope {
-        margin-bottom: 35px;
-      }
-      .list-cont {
-        padding: 8px;
-        position: relative;
-      }
-      .list-title {
-        font-size: 17px;
-        font-weight: 600;
-        font-family: initial;
-      }
-    </style>
-  </head>
+  <style id="compiled-css" type="text/css">
+      .constrained {
+    margin: 10px;
+    padding: 10px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid lightgray;
+}
+.constrained1 {
+    margin: 10px;
+    padding: 10px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid lightgray;
+}
 
-  <body>
-    <div ng-app="app">
-      <scroll></scroll>
-    </div>
+  </style>
 
-    <!--Dependencies-->
-    <script
-      data-require="jquery@2.0.3"
-      data-semver="2.0.3"
-      src="http://code.jquery.com/jquery-2.0.3.min.js"
-    ></script>
-    <script
-      data-require="angular.js@1.2.0-rc3"
-      data-semver="1.2.0-rc3"
-      src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"
-    ></script>
-    <script src="https://rawgithub.com/BinaryMuse/ngInfiniteScroll/1.0.0/build/ng-infinite-scroll.min.js"></script>
-    <script src="app.js"></script>
 
-    <!--Controllers-->
-    <script src="./scripts/controllers/app.controller.js"></script>
+  
+</head>
+<body ng-app="app">
 
-    <!--Factories-->
-    <script src="scripts/factory/app.factory.js"></script>
-
-    <!--Directives-->
-
-    <script src="scripts/directives/scroll.component.js"></script>
-  </body>
+ 
+ <directive1></directive1>
+ <directive2></directive2>
+</body>
 </html>
