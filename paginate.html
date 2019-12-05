@@ -1,0 +1,19 @@
+<div class="pagination-wrap">
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Title</td>
+      </tr>
+    </thead>
+    <tr ng-repeat="posts in data">
+      <td>{{posts.id}}</td>
+      <td>{{posts.body}}</td>
+    </tr>
+  </table>
+
+  <div class="btn-wrap">
+    <button class="pg-btn" ng-click="page=page+1">Next</button>
+    <button class="pg-btn" ng-click="page=page-1">Prev</button>
+  </div>
+</div>

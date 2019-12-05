@@ -1,52 +1,60 @@
-var app = angular.module('app', ['infinite-scroll']);
+var app = angular.module('app', []);
 
-app.directive('directive1', function() {
+app.controller('tableController', [
+  '$scope',
+  'getResult',
+  function($scope, getResult) {
+    $scope.page = 1;
+    $scope.result = {};
+    let url = 'https://jsonplaceholder.typicode.com/posts?userId=';
+
+    let beginGetData = () => {
+      getResult.getResult(url + $scope.page).then(function(response) {
+ 
+        if(response.length!=0)
+        $scope.result = response;
+        else
+        alert('Data not Found')
+      });
+    };
+    beginGetData();
+    $scope.$watch('page', function(newValue, oldValue) {
+      if (newValue !== oldValue) {
+        beginGetData();
+      }
+    });
+  }
+]);
+
+app.service('getResult', [
+  '$http',
+  '$q',
+  function($http, $q) {
+    this.getResult = function(url) {
+      var def = $q.defer();
+
+      $http
+        .get(url)
+        .success(function(data) {
+          def.resolve(data);
+        })
+        .error(function() {
+          def.reject({ err: 'Failed to get albums' });
+        });
+      return def.promise;
+    };
+  }
+]);
+
+app.directive('ngPaginate', function() {
   return {
     restrict: 'AE',
-    scope: {},
-    controller: [
-      '$scope',
-
-      function scope1Controller1($scope) {
-        $scope.logEvents = [];
-        let page = 0;
-        $scope.loadMore = function() {
-          page++;
-
-
-for(let i=0;i<10;i++)
-
-$scope.logEvents.push({
-  name: page
-});
-
-
-          console.log(page);
-        
-        };
-      }
-    ],
-    templateUrl: './scroll1.html'
-  };
-});
-app.directive('directive2', function() {
-  return {
-    restrict: 'AE',
-    scope: {},
-    controller: [
-      '$scope',
-
-      function scope1Controller1($scope) {
-        $scope.logEvents = [];
-        let page = 0;
-        $scope.loadMore = function() {
-          page++;
-          $scope.logEvents.push({
-            name: page
-          });
-        };
-      }
-    ],
-    templateUrl: './scroll2.html'
+    transclude: true,
+    scope: {
+      data: '=',
+      page: '='
+    },
+    controller: ['$scope', function pgController($scope) {}],
+    templateUrl: './paginate.html'
   };
 });

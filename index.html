@@ -6,39 +6,41 @@
       type="text/css"
       href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://code.angularjs.org/1.4.8/angular.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.js"
-    ></script>
-    <script type="text/javascript" src="./app.js"></script>
-
-    <style id="compiled-css" type="text/css">
-      .constrained {
-        margin: 10px;
-        padding: 10px;
-        height: 200px;
-        overflow: auto;
-        border: 1px solid lightgray;
+    <style>
+      .pagination-wrap {
+        position: relative;
+        padding: 13px;
       }
-      .constrained1 {
-        margin: 10px;
-        padding: 10px;
-        height: 200px;
-        overflow: auto;
-        border: 1px solid lightgray;
+      .pg-btn {
+        padding: 6px;
+        width: 82px;
+        border: 1px solid #cac3c3;
+        margin-right: 10px;
+        background-image: linear-gradient(
+          141deg,
+          #d7ffed 0%,
+          #1db5c3 51%,
+          #36c9ff 75%
+        );
+        font-size: 13px;
+        color: #fff;
+      }
+      .btn-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
       }
     </style>
   </head>
   <body ng-app="app">
-    <directive1></directive1>
-    <directive2></directive2>
+    <div ng-controller="tableController">
+      <ng-paginate data="result" page="page"> </ng-paginate>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://code.angularjs.org/1.4.8/angular.js"
+    ></script>
+    <script type="text/javascript" src="./app.js"></script>
   </body>
 </html>
