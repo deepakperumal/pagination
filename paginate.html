@@ -16,12 +16,18 @@
   </div>
 
   <div class="pg-btn-wrap" ng-show="paginationType==2">
+    <button class="page-btn move-pointer ">
+      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+    </button>
     <button
       class="page-btn"
       ng-repeat="count in pageLimit"
       ng-click="ch(count)"
     >
       {{count}}
+    </button>
+    <button class="page-btn move-pointer ">
+      <i class="fa fa-angle-double-right" aria-hidden="true"></i>
     </button>
   </div>
 </div>

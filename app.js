@@ -77,6 +77,8 @@ app.directive('ngPaginate', function() {
     },
     controller: ['$scope', function pgController($scope) {}],
     link: function(scope, element, attribute) {
+
+
       scope.pageLimit = [];
       scope.tableHead = {};
 

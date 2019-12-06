@@ -1,0 +1,32 @@
+.pagination-wrap {
+  position: relative;
+  padding: 12px;
+  border: 1px solid #bdbdbd;
+  width: 58%;
+  margin: 20px auto;
+}
+.pg-btn {
+  padding: 6px;
+  width: 82px;
+  margin-right: 10px;
+  font-size: 13px;
+  color: #fff;
+  background: #0a0a0a;
+  border: 1px solid;
+}
+.btn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pg-btn-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.page-btn {
+  padding: 6px;
+  width: 38px;
+  margin-right: 10px;
+  border: none;
+}
