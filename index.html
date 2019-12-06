@@ -9,32 +9,62 @@
     <style>
       .pagination-wrap {
         position: relative;
-        padding: 13px;
+        padding: 12px;
+        border: 1px solid #bdbdbd;
+        width: 58%;
+        margin: 20px auto;
       }
       .pg-btn {
         padding: 6px;
         width: 82px;
-        border: 1px solid #cac3c3;
         margin-right: 10px;
-        background-image: linear-gradient(
-          141deg,
-          #d7ffed 0%,
-          #1db5c3 51%,
-          #36c9ff 75%
-        );
         font-size: 13px;
-        color: #fff;
       }
       .btn-wrap {
         display: flex;
         flex-direction: row;
         justify-content: center;
       }
+      .pg-btn-wrap {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .page-btn {
+        padding: 6px;
+        width: 38px;
+        margin-right: 10px;
+        border: none;
+      }
     </style>
   </head>
   <body ng-app="app">
     <div ng-controller="tableController">
-      <ng-paginate data="result" page="page"> </ng-paginate>
+      <ng-paginate
+        data="result"
+        page="page"
+        change-page="redirectPage(flag)"
+        limit="[1,10]"
+        pagination-type="2"
+        pagination-heading="heading"
+        item-limit="none"
+        remove-item="['userId','body']"
+      >
+      </ng-paginate>
+    </div>
+
+    <div ng-controller="tableController1">
+      <ng-paginate
+        data="result"
+        page="page"
+        change-page="redirectPage(flag)"
+        limit="[1,10]"
+        pagination-type="1"
+        pagination-heading="heading"
+        item-limit="4"
+        remove-item="['userId','body']"
+      >
+      </ng-paginate>
     </div>
 
     <script
