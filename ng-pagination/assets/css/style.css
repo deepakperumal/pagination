@@ -29,7 +29,8 @@
   padding: 6px;
   width: 38px;
   margin-right: 10px;
-  border: none;
+  background: #ffff;
+  border: 1px solid;
 }
 .move-pointer {
   border: 1px solid;

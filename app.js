@@ -27,7 +27,7 @@ app.controller('tableController1', [
   'getResult',
   function($scope, getResult) {
     $scope.page = 1; //Page Number Declaration
-    $scope.heading = ['Id', 'Title'];
+    $scope.heading = ['ID', 'Title'];
     // Watch Page
     $scope.$watch('page', function() {
       beginGetData();

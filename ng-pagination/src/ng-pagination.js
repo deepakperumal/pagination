@@ -23,6 +23,10 @@ pgModule.directive('ngPaginate', function() {
       let generateLimit = startLimit => {
         let temp = [];
 
+if(startLimit>10)
+startLimit-=7
+
+
         for (i = startLimit; i <= 10 + startLimit; i++)
           if (i >= scope.limit[0] && i <= scope.limit[1]) temp.push(i);
 
