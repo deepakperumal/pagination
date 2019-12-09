@@ -4,7 +4,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      href="./resources/css/bootstrap.min.css"
     />
     <link
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -24,11 +24,11 @@
         data="result"
         page="page"
         change-page="redirectPage(flag)"
-        limit="[1,10]"
+        limit="[1,26]"
         pagination-type="2"
         pagination-heading="heading"
-        item-limit="none"
-        remove-item="['userId']"
+        item-limit="5"
+        show-item="['title','body','id']"
       >
       </ng-paginate>
     </div>
@@ -42,16 +42,14 @@
         pagination-type="1"
         pagination-heading="heading"
         item-limit="4"
-        remove-item="['userId','body']"
+        show-item="['id','title']"
       >
       </ng-paginate>
     </div>
 
-    <script
-      type="text/javascript"
-      src="https://code.angularjs.org/1.4.8/angular.js"
-    ></script>
+    <script type="text/javascript" src="./resources/js/angular.js"></script>
     <script src="./ng-pagination/src/ng-pagination.js"></script>
     <script type="text/javascript" src="./app.js"></script>
   </body>
 </html>
+<!--Ref http://plnkr.co/edit/6PFCPuFrN6lfGHjHVwGf?p=preview-->

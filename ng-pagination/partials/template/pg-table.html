@@ -1,34 +1,32 @@
 <div class="pagination-wrap">
-    <table class="table table-stripped">
-      <thead>
-        <tr>
-          <td ng-repeat="data in paginationHeading">{{data}}</td>
-        </tr>
-      </thead>
-      <tr ng-repeat="result in data | limitTo:itemLimit">
-        <td ng-repeat="(key,val) in result" ng-if="!checkExist(key)">{{val}}</td>
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <td ng-repeat="data in paginationHeading" ng-bind="data"></td>
       </tr>
-    </table>
-  
-    <div class="btn-wrap" ng-show="paginationType==1">
-      <button class="pg-btn" ng-click="changePage(1)">Next</button>
-      <button class="pg-btn" ng-click="changePage(0)">Prev</button>
-    </div>
-  
-    <div class="pg-btn-wrap" ng-show="paginationType==2">
-      <button class="page-btn move-pointer  " ng-click="changePage(0)">
-        <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-      </button>
-      <button
-        class="page-btn"
-        ng-repeat="count in pageLimit"
-        ng-click="ch(count)"
-      >
-        {{count}}
-      </button>
-      <button class="page-btn move-pointer " ng-click="changePage(1)">
-        <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-  
+    </thead>
+    <tr ng-repeat="result in data | limitTo:itemLimit">
+      <td ng-repeat="(key,val) in result" ng-if="checkExist(key)" ng-bind="val"></td>
+    </tr>
+  </table>
+</div>
+<div class="btn-wrap" ng-if="paginationType==1">
+  <button class="pg-btn" ng-click="changePage(1)">Next</button>
+  <button class="pg-btn" ng-click="changePage(0)">Prev</button>
+</div>
+<div class="pg-btn-wrap" ng-if="paginationType==2">
+  <button class="page-btn move-pointer  " ng-click="changePage(0)">
+    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+  </button>
+  <button
+    class="page-btn"
+    ng-repeat="count in pageLimit"
+    ng-click="ch(count)"
+    ng-class="{'highlighted':toggleClass(count)}"
+  >
+    {{count}}
+  </button>
+  <button class="page-btn move-pointer " ng-click="changePage(1)">
+    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+  </button>
+</div>
